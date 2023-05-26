@@ -1,0 +1,195 @@
+html {
+    font-size: 100%;
+    /*for using REM units*/
+}
+
+body {
+    min-height: 100vh;
+    color: $text-body;
+    font-size: rem(12);
+    font-family: $font-family--primary;
+    line-height: $base__line;
+    position: relative;
+    background-color: $bg-primary;
+    font-weight: $font-weight--medium;
+}
+
+// Text
+@include setFontSize($fontSize--sm);
+
+h1.text__hero {
+    $text-stroke: 1px;
+    font-size: rem(32);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: rem(8);
+    line-height: 1.2em;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    font-family: $font-family--header;
+    -webkit-text-stroke: $text-stroke $bg-primary;
+    color: transparent;
+}
+
+
+h4.logo {
+    font-family: $font-family--logo;
+    font-size: rem(32);
+    line-height: calc(44/32);
+    font-weight: $font-weight--semibold;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &.logo--footer {
+        font-size: rem(24);
+    }
+
+}
+
+
+a {
+    color: inherit;
+    font-weight: $font-weight--medium;
+}
+
+
+
+p.text__hero__p {
+    color: $bg-primary;
+    font-weight: $font-weight--medium;
+    font-size: rem(14);
+    letter-spacing: 0.015em;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    // opacity: 0.9;
+}
+
+.text--price {
+    color: $text-price;
+    font-weight: $font-weight--bold;
+    font-size: rem(14);
+}
+
+.break__line {
+    @extend %break-line
+}
+
+.secondary__text {
+    line-height: 1;
+    font-family: $font-family--secondary;
+    margin-top: rem(4);
+    text-transform: uppercase;
+
+    &__head {
+        font-weight: $font-weight--bold;
+        opacity: 0.85;
+        margin-bottom: rem(24);
+
+    }
+
+
+    &__footer__head {
+        margin-bottom: rem(12);
+        margin-top: 0;
+
+    }
+
+    &__text--bold {
+        margin-bottom: rem(4);
+    }
+
+    &__text--medium {
+        font-weight: $font-weight--medium;
+        text-transform: lowercase;
+    }
+}
+
+.primary__text {
+    line-height: 1;
+    color: $color-text-header;
+    font-family: $font-family--header;
+    font-weight: $font-weight--extra-bold;
+
+    &.menu__section {
+        font-size: clamp(rem(18), 1.8vw, rem(32));
+    }
+
+    &__head--section {
+        margin-bottom: rem(24);
+    }
+
+    &__head--main {
+        font-size: clamp(rem(24), 5vw, rem(64));
+        letter-spacing: $letter-space;
+        text-transform: uppercase;
+        letter-spacing: 0.045rem;
+    }
+
+    &__head--sm {
+        font-weight: $font-weight--bold;
+        text-transform: lowercase;
+        margin-top: rem(16);
+        margin-bottom: rem(4);
+    }
+
+
+
+}
+
+.menu__text {
+    &__head {
+        font-weight: $font-weight--bold;
+        margin-bottom: rem(4);
+    }
+
+    &__p {
+        opacity: 0.75;
+    }
+}
+
+.explore__card {
+    &__title {
+        font-size: rem(18);
+        font-weight: $font-weight--bold;
+        margin-bottom: em(8);
+    }
+
+    &__description {
+        font-weight: $font-weight--regular;
+    }
+}
+
+@include media(medium) {
+    @include setFontSize($fontSize--md);
+
+    h1.text__hero {
+        font-size: rem(64);
+        $text-stroke: 2px;
+
+    }
+
+    p.text__hero__p {
+        font-size: rem(20);
+    }
+
+    .text--price {
+        font-size: rem(18);
+    }
+
+}
+
+@include media(large) {
+    @include setFontSize($fontSize--lg);
+
+    h1.text__hero {
+        font-size: rem(96);
+        $text-stroke: 4px;
+
+    }
+
+    p.text__hero__p {
+        font-size: rem(24);
+    }
+
+    .text--price {
+        font-size: rem(20);
+    }
+}

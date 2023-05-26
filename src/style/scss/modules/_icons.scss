@@ -1,0 +1,29 @@
+// ======================================
+//  Icon Styles
+// ======================================
+
+.material-icons {
+    font-size: 2.35em;
+    color: $color-primary;
+}
+
+
+// UI
+
+.icn {
+
+    // Nav Toggle
+    @include bem--m(nav-toggle) {
+        @extend %icn--ui;
+        width: 25px;
+        height: 17px;
+        // border-top: solid 3px palette(grey);
+        // border-bottom: solid 3px palette(grey);
+        position: relative;
+
+        @include pseudo-el(before, 25px, 3px) {
+            // background: palette(grey, light);
+            top: 4px;
+        }
+    }
+}

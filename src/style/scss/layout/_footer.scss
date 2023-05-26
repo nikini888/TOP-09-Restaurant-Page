@@ -1,0 +1,87 @@
+// ======================================
+//  Footer Styles
+// ======================================
+
+footer {
+    background-color: $bg-footer;
+    border: 1px solid $stroke-footer;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.09);
+
+
+
+    padding-top: rem(34);
+    padding-bottom: rem(34);
+
+    .container {
+        @include flex();
+    }
+
+    .material-symbols-rounded {
+        position: absolute;
+        font-size: rem(12);
+        line-height: rem(16);
+        left: -(rem(18));
+        right: rem(5);
+        top: rem(-1);
+        opacity: 0.75;
+    }
+
+    .contactInfo {
+        margin-bottom: rem(34);
+    }
+
+    .neo-icon {
+        position: relative;
+        display: block;
+    }
+
+    @include media(medium) {
+        .footer__logo {
+            flex: 1;
+        }
+
+        .foot-nav {
+            flex: 2;
+
+            @include flex();
+        }
+    }
+
+}
+
+.footer__subhead__contact {
+    height: rem(30);
+    display: block;
+
+    &::before {
+        display: inline-block;
+        content: '';
+        height: 100%;
+        vertical-align: bottom;
+        width: 0px;
+    }
+
+    .align-bottom {
+        display: inline-block;
+    }
+}
+
+.contactInfo__socials {
+    @include flex(column) {
+        justify-content: flex-start;
+    }
+
+    ;
+
+    &>* {
+        width: 44px;
+        padding: calc((44px - 24px)/2);
+        padding-left: 0;
+    }
+
+    @include media(medium) {
+        @include flex(row) {
+            justify-content: flex-start;
+        }
+    }
+}

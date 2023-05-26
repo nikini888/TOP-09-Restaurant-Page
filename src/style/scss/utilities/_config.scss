@@ -1,0 +1,110 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+
+// Font Stacks
+
+$font-url--google : "https://fonts.googleapis.com/css2?family=Joti+One&family=Rajdhani:wght@600;700&family=Roboto:wght@400;500;700&display=swap";
+$font-family--primary : 'Roboto',
+sans-serif;
+$font-family--secondary : 'Rajdhani',
+sans-serif;
+$font-family--header: 'Metropolis', 'Roboto', cursive;
+$font-family--logo: 'Joti One', 'Roboto', cursive;
+
+
+
+
+// Font Weights
+
+$font-weight--regular : 400;
+$font-weight--medium : 500;
+$font-weight--semibold : 600;
+$font-weight--bold : 700;
+$font-weight--extra-bold : 800;
+$font-weight--ultra-bold : 900;
+
+// Descriptive Base Colors
+
+$text-body : #243E36;
+$text-white : #FFFFFF;
+$text-price : #620707;
+$bg-primary: #FFF8EA;
+$bg-secondary: #FFFFFF;
+$bg-collapse-nav: #FCEED2;
+$bg-btn-curren: rgba(36, 62, 54, 0.07);
+$bg-nav-btn: #F0EBE1;
+$bg-card: #FBE9C3;
+$bg-explore-card: #F8F8F8;
+$bg-card-hovering: linear-gradient(189.48deg, rgba(248, 162, 88, 0.8) 16.71%, rgba(239, 203, 141, 0.8) 92.84%), #F5D7A4;
+$bg-footer: #F2EDE4;
+$bg-input: #FAEDD2;
+
+$stroke-footer: #CFCAC1;
+$stroke-card: #F2CD7E;
+
+
+$violin-brown : #634205;
+$gamboge-orange: #A36900;
+$outer-space : #243E36;
+$persian-red: #CC3333;
+$icon-liner: linear-gradient(90deg, #F6AD25 0%, #EE971D 16.67%, #E58217 33.33%, #DB6C15 50%, #CF5616 66.67%, #C33F17 83.33%, #B52518 100%);
+$icon-input: #620707;
+// Color Usage
+
+$color-primary : $outer-space;
+$color-secondary : $violin-brown;
+$color-text-header: $gamboge-orange;
+$btn-primary: $persian-red;
+// Color Palette Modifiers
+
+$color-palettes: (
+    primary: (xx-light : lighten($color-primary, 43%),
+        x-light : lighten($color-primary, 35%),
+        light : lighten($color-primary, 12%),
+        base : $color-primary,
+        dark : darken($color-primary, 8%),
+        x-dark : darken($color-primary, 16%)),
+    secondary: (light : lighten($color-secondary, 10%),
+        base : $color-secondary,
+        dark : darken($color-secondary, 10%))
+);
+
+// Layout
+$max-width: 1250px;
+
+// Text
+
+$base__font-size : 16;
+$base__line : 1.35;
+$letter-space: 0.015em;
+
+// Border radius
+
+$br--default : .3125em;
+$br--round : 50%;
+
+// Transitions
+
+$transitions-duration : .3s;
+
+
+// Breakpoints
+
+$brkpoint-sm : 1px;
+$brkpoint-md : 680px;
+$brkpoint-lg : 1100px;
+
+// Margin
+
+$m4: calc(4/$base__font-size)*1rem;
+$m8: calc(8/$base__font-size)*1rem;
+$m16: calc(16/$base__font-size)*1rem;
+$m80: calc(80/$base__font-size)*1rem;
+$m100: calc(100/$base__font-size)*1rem;
+$m150: calc(150/$base__font-size)*1rem;
+
+
+$padding-8: 8;
+$padding-16: 16;

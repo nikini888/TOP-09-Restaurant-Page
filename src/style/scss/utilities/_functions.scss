@@ -1,0 +1,43 @@
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+// Import if Google Fonts URL is defined
+
+@if variable-exists(font-url--google) {
+    @import url($font-url--google);
+}
+
+// Calculate em values
+
+@function em($target, $context: $base__font-size) {
+    @return calc($target / $context) * 1em;
+}
+
+// Calculate rem values
+@function rem($target) {
+    @return calc($target / $base__font-size) * 1rem;
+}
+
+// Call the color palette modifiers in color values
+
+@function color($color, $tone: 'base') {
+
+    @warn map-get($color-palettes, $color);
+
+    @if map-has-key($color-palettes, $color) {
+        $color: map-get($color-palettes, $color);
+
+        @if map-has-key($color, $tone) {
+            $tone: map-get($color, $tone);
+            @return $tone;
+        }
+
+        @warn "unknown tone `#{$tone}` in color";
+        @return null;
+    }
+
+    @warn "unknown color `#{$color}` in palette";
+    @return null;
+
+}

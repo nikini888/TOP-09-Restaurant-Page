@@ -1,0 +1,171 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+// BEM selectors
+
+@mixin bem__e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+;
+
+@mixin bem--m($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+;
+
+// Media queries
+
+@mixin media($break) {
+    @if $break =="small" {
+        @media (min-width: $brkpoint-sm) and (max-width: $brkpoint-md) {
+            @content;
+        }
+    }
+
+    @else if $break =="medium" {
+        @media (min-width: ($brkpoint-md + 1)) {
+            @content;
+        }
+    }
+
+    @else if $break =="large" {
+        @media (min-width: $brkpoint-lg) {
+            @content;
+        }
+    }
+
+    @else {
+        @error "Whoops! No value could be retrieved for `#{$break}`. "
+    }
+}
+
+;
+
+
+// Generate modifier color classes
+
+@mixin bg-colors($map) {
+
+    @each $theme,
+    $color in $map {
+        &--#{$theme} {
+            background-color: $color;
+        }
+    }
+}
+
+;
+
+
+// Generating :before or :after pseudo-element shapes
+
+@mixin pseudo-el($el: "before",
+    $el-w: 100%,
+    $el-h: null) {
+    position: relative;
+
+    @if $el =="before" or $el =="after" {
+        &:#{$el} {
+            @extend %pseudos;
+            width: $el-w;
+            height: $el-h;
+            @content;
+        }
+    }
+
+    @else {
+        @error "`#{$el}` is not a valid pseudo-element.";
+    }
+}
+
+;
+
+// Image replacement
+
+@mixin img-replace($img, $w: auto, $h: auto, $disp: block) {
+    background-image: url('#{$path--rel}/#{$img}');
+    background-repeat: no-repeat;
+    width: $w;
+    height: $h;
+    display: $disp;
+}
+
+;
+
+// Adjacent sibling margins
+
+@mixin doubly($margin: 1em) {
+    &+&:not(:last-child) {
+        margin-left: $margin;
+        @content;
+    }
+}
+
+;
+
+// Grid Columns
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.5rem;
+}
+
+;
+
+// Center containers
+@mixin div--center($width: 90%) {
+    width: $width;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin center-grid {
+    display: grid;
+    place-content: center;
+}
+
+//display flex
+@mixin flex($direc: row, $justify-content: space-between, $wrap: null) {
+    display: flex;
+    flex-wrap: $wrap;
+    flex-direction: $direc;
+    justify-content: $justify-content;
+    @content;
+}
+
+
+// set font
+@mixin setFontSize($map) {
+
+    @each $element,
+    $fontSize in $map {
+        #{$element} {
+            font-size: $fontSize;
+        }
+    }
+}
+
+// add padding to container 
+@mixin setPaddingLeftRight() {
+    padding-left: rem(16);
+    padding-right: rem(16);
+
+    @include media(medium) {
+        padding-left: rem(34);
+        padding-right: rem(34);
+    }
+
+    @include media(large) {
+        padding-left: rem(86);
+        padding-right: rem(86);
+    }
+}

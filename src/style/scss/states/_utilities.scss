@@ -1,0 +1,36 @@
+// Screen reader text
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    top: auto;
+}
+
+
+// Center elements
+
+.centered {
+    display: grid;
+    place-content: center;
+}
+
+//Display
+.hidden {
+    display: none;
+    height: 0;
+}
+
+.nonvisible {
+    visibility: hidden;
+}
+
+.flex-md-cl {
+    @include media(medium) {
+        @include flex(row) {
+            gap: 1rem;
+        }
+    }
+}

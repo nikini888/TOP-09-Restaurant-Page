@@ -1,0 +1,62 @@
+// ======================================
+//  Card Styles
+// ======================================
+.card__menu {
+    background-color: $bg-card;
+    border: 1px solid $stroke-card;
+    padding: rem(8);
+    box-shadow: 1px 2px 8px rgba(151, 138, 107, 0.26);
+    border-radius: 30px 0px 0px 0px;
+
+    @include flex(row) {
+        gap: rem(16);
+    }
+
+    @include media(large) {
+        flex-direction: column;
+        padding: rem(20);
+        width: 260px + 40px;
+    }
+
+    position: relative;
+
+    &>* {
+        flex: 0 0 auto;
+    }
+
+    .card__menu__description {
+        flex: 1 1 auto;
+
+        p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__img img {
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+
+        @include media(large) {
+            width: 260px;
+            height: 260px;
+        }
+    }
+
+    .text--price {
+        @include media(large) {
+            position: absolute;
+            top: rem(20);
+            left: rem(20);
+
+        }
+    }
+
+    transition: background 200ms ease-in-out;
+
+    &:hover {
+        background: $bg-card-hovering;
+    }
+}

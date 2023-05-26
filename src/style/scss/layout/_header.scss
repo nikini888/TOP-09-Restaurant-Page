@@ -1,0 +1,17 @@
+// ======================================
+//  Header Styles
+// ======================================
+
+#header {
+    padding-top: rem(24);
+    margin-bottom: rem(24);
+
+    @include media(medium) {
+        @include flex();
+    }
+
+    .logo-center {
+        @include center-grid();
+        justify-content: start;
+    }
+}

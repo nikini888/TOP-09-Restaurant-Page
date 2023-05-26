@@ -1,0 +1,194 @@
+@use "sass:map";
+
+#menu {
+    &>* {
+        margin-bottom: rem(34);
+    }
+
+    .menu__header {
+        position: relative;
+        min-height: 300px;
+        display: grid;
+        align-content: center;
+
+        @include media(medium) {
+            min-height: 450px;
+        }
+
+        @include media(large) {
+            min-height: 750px;
+        }
+
+
+        .menu__section {
+            &>* {
+                &:hover {
+                    opacity: 0.7;
+                }
+
+                @include media(medium) {
+                    padding-left: calc(em(100) + 1em);
+
+                }
+
+                @include media(large) {
+                    padding-left: calc(em(130) + 1em);
+
+
+                }
+
+                @include pseudo-el(before, 100px, 3px) {
+                    background-color: $color-text-header;
+                    opacity: 0.75;
+                    display: none;
+                    top: 50%;
+                    width: em(100);
+                    transform: translateY(-50%);
+
+                    @include media(medium) {
+                        display: block;
+                    }
+
+                    @include media(large) {
+                        width: em(130);
+                    }
+                }
+
+            }
+
+            &:first-child {
+                margin-top: em(12);
+            }
+
+            margin: rem(8) auto;
+        }
+
+        .menu__img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: clamp(280px, 70vw, 80%);
+            height: 100%;
+            overflow: hidden;
+            border-radius: rem(65);
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: -1;
+
+            @include media(medium) {
+                border-radius: rem(166);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-position: center;
+                object-fit: cover;
+                margin-bottom: rem(34);
+
+            }
+        }
+    }
+
+
+
+
+    .menu__items {
+        margin-top: rem(26);
+        margin-bottom: rem(34);
+
+        @include flex(column) {
+            gap: rem(8)
+        }
+
+        @include media(large) {
+            flex-direction: row;
+            row-gap: rem(20);
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+    }
+
+    .menu__drink__img,
+    .menu__dessert__img {
+        height: 320px;
+        margin-bottom: rem(16);
+        overflow: hidden;
+        width: 100%;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .menu__drink__img {
+        @include media(large) {
+            height: auto;
+            max-height: 750px;
+        }
+    }
+
+    .menu__dessert__img {
+        @include media(large) {
+            height: auto;
+            max-height: 558px;
+        }
+    }
+
+    .flex__menu {
+        @include media(large) {
+            @include flex() {
+                gap: rem(48);
+            }
+
+            &>* {
+                flex: 1;
+                width: 45%;
+            }
+
+            .order2 {
+                order: 2;
+            }
+        }
+    }
+
+    .menu__list {
+        &__header {
+            font-family: $font-family--secondary;
+            font-weight: $font-weight--bold;
+            color: $text-price;
+            text-transform: uppercase;
+            margin-top: rem(24);
+            margin-bottom: rem(18);
+        }
+
+        &-item {
+            margin-top: rem(8);
+            margin-bottom: rem(8);
+            position: relative;
+
+            &__price {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            h6.menu__list__item {
+                border-bottom: 2px solid map.get($color-palettes, "primary", "xx-light");
+                ;
+            }
+
+            .menu__list__description {
+                margin-top: rem(8);
+                opacity: 0.75;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,36 @@
+// ======================================
+//  Button Styles
+// ======================================
+
+
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+.btn {
+    @extend %btn;
+
+    &--primary {
+        background: $btn-primary;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.22);
+        border-color: $btn-primary;
+
+    }
+
+    &--secondary-white {
+        background-color: transparent;
+        color: $bg-primary;
+        border-color: $bg-primary;
+    }
+
+    &--secondary-blue {
+        background-color: transparent;
+        color: $color-primary;
+        border-color: $color-primary;
+    }
+
+    &--CTA {
+        padding: 1em 2.25em;
+    }
+
+}

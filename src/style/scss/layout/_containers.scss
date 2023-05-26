@@ -1,0 +1,47 @@
+// ======================================
+//  Layout Container Styles
+// ======================================
+.container {
+    // padding: rem(16);
+    width: calc(100% - rem(16) * 2);
+    margin: 0 auto;
+
+    @include media(medium) {
+        width: min(80%, 1270px);
+
+    }
+}
+
+// Main content
+.main-content {
+    @include flex();
+    gap: 10px;
+
+    @include media(medium) {
+        @include div--center;
+    }
+}
+
+.sub-container {
+    margin-bottom: em(128);
+}
+
+// Inner
+.inner {
+    padding: 0.5em 1em;
+}
+
+
+// Intro
+.intro {
+    margin: auto;
+    padding: 1em 1em 3em;
+
+    p {
+        font-size: 1.2em;
+    }
+
+    @include media(large) {
+        width: 45%;
+    }
+}

@@ -1,0 +1,47 @@
+#home__page {
+    background: url('@asset/img/hero-phone-image.png'), linear-gradient(306.3deg, rgba(27, 23, 49, 0.35) 50.87%, rgba(0, 0, 0, 0) 73.46%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 500px;
+    position: relative;
+
+    .hero {
+        position: absolute;
+        @include flex(column);
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+
+
+    .btnCTA {
+        @include flex(column) {
+            gap: rem(16);
+            align-items: center;
+        }
+
+        margin-top:rem(16);
+    }
+
+    @include media(medium) {
+        height: min(700px, 80vh);
+
+        .hero {
+            text-align: right;
+
+        }
+
+        .btnCTA {
+            @include flex(row, end);
+            margin-top: rem(32);
+
+            &>* {
+                width: auto;
+            }
+        }
+    }
+}

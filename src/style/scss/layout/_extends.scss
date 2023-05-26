@@ -1,0 +1,32 @@
+// ==========================================================================
+// Placeholders
+// ==========================================================================
+
+
+
+%break-line {
+    position: relative;
+    margin-bottom: em(16);
+
+    @include pseudo-el(before, 100%, 2px) {
+        background-color: $color-primary;
+        opacity: 0.3;
+        z-index: -1;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    h3 {
+        color: $color-text-header;
+        background-color: $bg-primary;
+        padding-right: rem(16);
+        display: inline-block;
+        font-weight: $font-weight--extra-bold;
+    }
+
+    @include media(large) {
+        margin-bottom: em(86);
+    }
+}
