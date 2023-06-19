@@ -35,8 +35,6 @@ class aboutusView extends View {
             
         <div class="aboutus__about sub-container">
             <div class="aboutus__about__img">
-                <img src="https://images.unsplash.com/photo-1587899897069-860db57749ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=698&q=80"
-                alt="Rommy picture">
             </div>
             <div class="aboutus__about__description">
             <h2 class="primary__text primary__text__head primary__text__head--main">about rommy</h2>

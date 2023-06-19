@@ -36,19 +36,16 @@
 
 %btn {
     padding: em(16) em(24);
-    border: 0;
     border-radius: $br--default;
-    color: $text-white;
+    color: $text-body;
     font-weight: $font-weight--medium;
     transform: translate(0, 0);
-    transition: opacity transform $transitions-duration;
+    transition: opacity, transform $transitions-duration;
     display: block;
     width: 100%;
     font-size: rem(14);
     line-height: 1;
     text-align: center;
-    border-width: 1px;
-    border-style: solid;
 
     &:hover {
         opacity: .75;
