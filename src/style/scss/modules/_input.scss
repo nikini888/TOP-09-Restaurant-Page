@@ -1,119 +1,64 @@
+$brkpoint-md: 550px;
+
+//Clear input number arrows/ Spinners
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 input {
-    font-size: clamp(12px, 1.8vw, 28px);
+    width: 100%;
     font-weight: 400;
     color: $text-body;
     font-family: $font-family--primary !important;
-    padding: rem($padding-16) rem($padding-16);
-    background: $bg-input;
-    border: 1px solid rgba(36, 62, 54, 0.25);
+    padding: rem(16);
+    background: $input-bg;
+    border: 1px solid #dfc591;
     box-shadow: inset 2px 4px 8px rgba(0, 0, 0, 0.13);
     border-radius: 9px;
-}
-
-input[type="date"],
-input[type="time"] {
-    position: relative;
-
-    &::-webkit-calendar-picker-indicator {
-        color: transparent;
-        background: none;
-        z-index: 1;
-        margin-left: rem(4);
-        cursor: pointer;
-    }
-
-    &::before {
-        cursor: pointer;
-        background: none;
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        font-size: clamp(12px, 2vw, 24px);
-        content: "\f107";
-        display: block;
-        width: clamp(12px, 2vw, 24px);
-        height: clamp(12px, 2vw, 24px);
-        position: absolute;
-        pointer-events: none; //allows you to click through the overlapping button, but then you can not style the button while hovered.
-        top: rem($padding-16);
-        right: rem($padding-16);
-        color: $icon-input;
-        text-align: right;
-    }
+    min-height: 45px;
 }
 
 input[type="number"] {
-    width: 100%;
-    height: 100%;
-
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-        width: 20px;
-        height: 20px;
-        font-size: clamp(12px, 1.8vw, 28px);
-        opacity: 0;
-        color: transparent;
-        background: none;
-        cursor: pointer;
-    }
-
+    border-radius: 0;
+    text-align: center;
 }
 
-.input__number {
-    position: relative;
+input[id="time-within"] {
+    padding-right: 65px;
+    max-width: 108px;
+    text-align: left;
 
-    .label__number {
-        position: absolute;
-        left: 4ch;
-        z-index: 1;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: clamp(12px, 1.8vw, 28px);
-        font-weight: 400;
-    }
-
-    .label__number--line {
-        position: absolute;
-        right: rem($padding-16);
-        z-index: 3;
-        top: 50%;
-        width: clamp(9px, 1.7vw, 18px);
-        height: 1px;
-        background-color: rgba(0, 0, 0, 0.4);
-        transform: translateY(-50%);
-    }
-
-    &::before,
-    &::after {
-        z-index: 2;
-        pointer-events: none;
-        background: none;
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        width: clamp(20px, 2vw, 24px);
-        height: 12px;
-        font-size: clamp(12px, 2vw, 24px);
-        // font-size: rem(12);
-        // width: 20px;
-        // height: 12px;
-        display: block;
-        position: absolute;
-        background-color: $bg-input;
-        right: rem($padding-16);
-        color: $icon-input;
-        text-align: right;
-    }
-
-    &::after {
-        content: "\f107";
-        bottom: 30%;
-    }
-
-    &::before {
-        content: "\f106";
-        top: 23%;
+    @media screen and (min-width:922px) {
+        max-width: 120px;
     }
 }
 
+input:valid {
+    border: 1px solid rgba(36, 62, 54, 0.75);
+}
 
+input:invalid {
+    border: 1px solid rgba(243, 6, 6, 0.75);
+}
 
-// ::-webkit-calendar-picker-indicator
+// input:invalid+.error {
+//     visibility: visible;
+// }
+
+label.secondary__text {
+    display: block;
+    min-width: 5ch;
+    margin-bottom: rem(4);
+    text-transform: unset;
+    color: $text-body;
+    font-family: $font-family--primary !important;
+    flex-shrink: 0;
+}

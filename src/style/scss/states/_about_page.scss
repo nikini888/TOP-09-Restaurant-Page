@@ -41,16 +41,13 @@
     }
 
     &__img {
+        background-image: url('https://images.unsplash.com/photo-1587899897069-860db57749ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=698&q=80');
+        background-position: center;
+        background-size: cover;
         flex-basis: 30%;
         flex-grow: 1;
         max-width: 480px;
-        min-height: 264px;
-
-        img {
-            height: 100%;
-            object-fit: cover;
-        }
-
+        height: auto;
     }
 
     &__description {

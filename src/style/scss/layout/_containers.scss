@@ -23,7 +23,11 @@
 }
 
 .sub-container {
-    margin-bottom: em(128);
+    margin-bottom: rem(48);
+
+    @include media(large) {
+        margin-bottom: em(128);
+    }
 }
 
 // Inner

@@ -6,6 +6,7 @@ import homeView from './Module/Views/homeView'
 import reserveView from './Module/Views/reserveView'
 import aboutusView from './Module/Views/aboutusView'
 import sidenavView from './Module/Views/sideNavView'
+import formView from './Module/Views/formView'
 
 const controllerSideNav = function () {
 }
@@ -40,4 +41,5 @@ function init() {
     sidenavView.eventOpenSideNav(controllerSideNav)
 }
 
-init()
+// init()
+reserveView.render(true, true, formView)

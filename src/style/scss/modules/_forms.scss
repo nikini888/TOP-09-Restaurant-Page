@@ -2,33 +2,168 @@
 // Form Elements
 // ==========================================================================
 
-.form {
-    @include bem__e(label) {
-        @include bem--m(hidden) {
-            @extend .sr-only;
-        }
+.form__main {
+    padding: 3em 0;
+    margin: 0 auto;
+    font-size: clamp(14px, 1.5vw, 17px);
+    padding: 1rem;
 
-        display: block;
-        margin-bottom: em(10);
-    }
-
-    @include bem__e(input) {
-        font-size: em(18);
-        margin-bottom: em(20, 18);
-        // border-bottom: 6px solid palette(grey, x-light);
+    @include media(medium) {
+        padding: 2rem;
+        background-color: $form-bg;
+        border: 1px solid $form-stroke;
         border-radius: $br--default;
+    }
 
-        // background: palette(grey, xx-light);
-        // color: palette(black, dark);
-        // font-weight: $font-weight--light;
-        // 
-        &:focus {
-            // border-color: $color-primary;
+    @include media(large) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+    }
+}
+
+.form__item--group {
+    @include flex() {
+        gap: 1rem;
+    }
+
+    .form__item:first-child {
+        flex: 3;
+    }
+
+    .form__item:last-child {
+        flex: 2;
+    }
+
+    ;
+}
+
+.form__item__guests {
+    @include flex();
+
+    .btn-number {
+        background-color: $form-btn-number;
+        display: inline-block;
+        padding: 1rem;
+        width: 40px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        font-weight: $font-weight--semibold;
+        font-size: 1rem;
+
+        &.increase {
+            border-radius: 9px 0 0 9px;
+        }
+
+        &.decrease {
+            border-radius: 0 9px 9px 0;
         }
     }
 
-    @include bem__e(btn) {
-        @extend %btn;
-        // background: $color-primary;
+}
+
+.form__item__time {
+    @include flex();
+
+    .text {
+        display: inline-block;
+        padding: 1rem;
+        color: rgba($text-body, 0.75);
+        flex-shrink: 0;
+        flex-grow: 1;
+
+        &:first-child {
+            border-radius: 9px 0 0 9px;
+            padding-left: 0;
+        }
+
+        &:last-child {
+            border-radius: 0 9px 9px 0;
+            padding-right: 0;
+
+        }
+    }
+
+    .text-of {
+        @include pseudo-el() {
+            content: 'minutes';
+            left: -66px;
+            color: $text-body;
+            font-weight: $font-weight--regular;
+
+            @media screen and (min-width:922px) {
+                left: -80px;
+            }
+        }
+    }
+
+}
+
+.form__item {
+    p.secondary__text {
+        margin-bottom: rem(4);
+        font-size: inherit;
+        opacity: 0.6;
+    }
+
+    .error {
+        display: block;
+        min-height: rem(14);
+        margin: em(4) 0;
+        font-size: rem(10);
+        margin-left: rem(10);
+        padding-left: rem(8);
+        visibility: hidden;
+        color: rgba(243, 6, 6, 0.75);
+
+        @include pseudo-el() {
+            font-family: 'Material Symbols Rounded';
+            content: "error";
+            left: - rem(10);
+            opacity: 0.85;
+            font-size: 10px;
+        }
+
+        font-weight: $font-weight--bold;
+    }
+
+}
+
+.name-field,
+.phone-field {
+    @include pseudo-el(before, 20px, 20px) {
+        font-family: 'Material Symbols Rounded';
+        font-size: clamp(14px, 1.6vw, 18px);
+        content: "close";
+
+        right: em(16);
+        font-family: "Material Symbols Rounded";
+        content: "close";
+        color: inherit;
+        opacity: 0.85;
+        line-height: 20px;
+        text-align: right;
+    }
+}
+
+.name-field::before {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.phone-field::before {
+    top: 52%;
+
+    @include media(large) {
+        top: 54%;
+    }
+}
+
+.reserve__btn {
+    margin-top: rem(32);
+
+    @include media(medium) {
+
+        margin-top: rem(48);
     }
 }

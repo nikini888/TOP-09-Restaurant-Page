@@ -4,7 +4,6 @@ html {
 }
 
 body {
-    min-height: 100vh;
     color: $text-body;
     font-size: rem(12);
     font-family: $font-family--primary;
@@ -117,7 +116,7 @@ p.text__hero__p {
     }
 
     &__head--main {
-        font-size: clamp(rem(24), 5vw, rem(64));
+        font-size: clamp(rem(24), 3.4vw, rem(48));
         letter-spacing: $letter-space;
         text-transform: uppercase;
         letter-spacing: 0.045rem;
@@ -129,7 +128,6 @@ p.text__hero__p {
         margin-top: rem(16);
         margin-bottom: rem(4);
     }
-
 
 
 }

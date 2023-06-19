@@ -1,62 +1,58 @@
 #reserve {
 
     .reserve__main {
-        text-align: center;
-        min-height: 100vh;
+        margin-top: rem(64);
+        margin-left: auto;
+        margin-right: auto;
 
-        .primary__text {
-            margin-top: rem(64);
 
-            @include media(large) {
-                margin-top: rem(140);
-                margin-bottom: rem(16);
-
-            }
+        &__head {
+            text-align: center;
         }
 
         .reserve__picktime {
-            margin-top: rem(48);
-            margin-bottom: rem(108);
+            margin: 0 auto;
+            margin-top: rem(32);
+            max-width: 500px;
 
-            @include media(large) {
-                margin-top: rem(86);
-                margin-bottom: rem(128);
-
+            @include pseudo-el(before, 100%, 100%) {
+                display: none;
+                left: -20px;
+                top: 20px;
+                background-color: transparent;
+                border: 1px solid rgba($text-body, 0.6);
+                z-index: -1;
+                border-radius: $br--default;
             }
 
-            &__form {
-                @include flex(column) {
-                    gap: rem(16);
+            @include media(medium) {
+                border-radius: $br--default;
+            }
+
+            @include media(large) {
+                display: flex;
+                margin-top: rem(48);
+                max-width: 1000px;
+
+                &::before {
+                    display: block;
                 }
 
-                @include media(large) {
-                    flex-direction: row;
 
-                    &>* {
-                        flex: 1;
-                    }
+                .reserve__img {
+                    background: url('@asset/img/reserve.png');
+                    width: 55%;
+                    background-size: cover;
+                    background-position: left;
+                    order: -1;
+                    border-top-left-radius: $br--default;
+                    border-bottom-left-radius: $br--default;
                 }
+
             }
 
         }
 
-        .reserve__btn {
-            margin-top: rem(64);
-
-            @include media(large) {
-                display: inline-block;
-                width: auto;
-            }
-        }
     }
-
-    .location {
-        width: 100%;
-        min-width: fit-content;
-        flex-grow: 1;
-        margin-bottom: rem(16);
-
-    }
-
 
 }

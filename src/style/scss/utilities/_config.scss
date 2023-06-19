@@ -39,7 +39,14 @@ $bg-card: #FBE9C3;
 $bg-explore-card: #F8F8F8;
 $bg-card-hovering: linear-gradient(189.48deg, rgba(248, 162, 88, 0.8) 16.71%, rgba(239, 203, 141, 0.8) 92.84%), #F5D7A4;
 $bg-footer: #F2EDE4;
-$bg-input: #FAEDD2;
+
+$bg-decor-reservation: #ffe0a2;
+
+$form-bg: #fff4de;
+$form-stroke: #f8e9cd;
+$form-btn-number: #ebbf70;
+$input-bg: #FAE5c8;
+$input-stroke: #dfc591;
 
 $stroke-footer: #CFCAC1;
 $stroke-card: #F2CD7E;
@@ -56,7 +63,8 @@ $icon-input: #620707;
 $color-primary : $outer-space;
 $color-secondary : $violin-brown;
 $color-text-header: $gamboge-orange;
-$btn-primary: $persian-red;
+$btn-primary: linear-gradient(180deg, #F6AD25 0%, #FFA126 72.4%, rgba(255, 114, 33, 0.89) 100%);
+;
 // Color Palette Modifiers
 
 $color-palettes: (
@@ -66,7 +74,7 @@ $color-palettes: (
         base : $color-primary,
         dark : darken($color-primary, 8%),
         x-dark : darken($color-primary, 16%)),
-    secondary: (light : lighten($color-secondary, 10%),
+    secondary: (light : lighten($color-secondary, 20%),
         base : $color-secondary,
         dark : darken($color-secondary, 10%))
 );
@@ -82,7 +90,7 @@ $letter-space: 0.015em;
 
 // Border radius
 
-$br--default : .3125em;
+$br--default : 8px;
 $br--round : 50%;
 
 // Transitions

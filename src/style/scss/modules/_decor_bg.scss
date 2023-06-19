@@ -1,0 +1,42 @@
+.decor-bg__reservation {
+    @include pseudo-el(before, 214px, 214px) {
+        background-color: $bg-decor-reservation;
+        left: -10%;
+        top: -5%;
+        z-index: -1;
+        border-radius: $br--round;
+
+        @include media(medium) {
+            width: 280px;
+            height: 280px;
+            top: -10%;
+        }
+
+        @include media(large) {
+            left: unset;
+            right: 0;
+            top: 0;
+            width: 35%;
+            height: 100%;
+            border-radius: 137px 0 0 137px;
+        }
+    }
+
+    @include pseudo-el(after, 150px, 150px) {
+        background-color: $bg-decor-reservation;
+        right: -5%;
+        bottom: 15%;
+        z-index: -1;
+        border-radius: $br--round;
+
+        @include media(medium) {
+            width: 250px;
+            height: 250px;
+            bottom: 10%;
+        }
+
+        @include media(large) {
+            display: none;
+        }
+    }
+}

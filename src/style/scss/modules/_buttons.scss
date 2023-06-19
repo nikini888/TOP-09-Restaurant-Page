@@ -11,22 +11,20 @@
     @extend %btn;
 
     &--primary {
-        background: $btn-primary;
+        background: linear-gradient(180deg, #F6AD25 0%, #FFA126 72.4%, rgba(255, 114, 33, 0.89) 100%);
         box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.22);
-        border-color: $btn-primary;
-
     }
 
     &--secondary-white {
         background-color: transparent;
         color: $bg-primary;
-        border-color: $bg-primary;
+        border: 1px solid $bg-primary;
     }
 
     &--secondary-blue {
         background-color: transparent;
         color: $color-primary;
-        border-color: $color-primary;
+        border: 1px solid $color-primary;
     }
 
     &--CTA {

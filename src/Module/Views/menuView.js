@@ -2,10 +2,6 @@ import { View } from './view.js'
 
 class menuViews extends View {
     _parentEl = document.getElementById('main')
-    constructor() {
-        super();
-        console.log('he');
-    }
     _mainMenuMarkup(data) {
         return `
         <section>
@@ -33,7 +29,6 @@ class menuViews extends View {
         `
     }
     _otherMenu(data) {
-        console.log(data)
         return ` 
         <section id="menu__${data.name}">
             <div class="break__line">
